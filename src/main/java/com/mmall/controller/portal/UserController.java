@@ -34,7 +34,7 @@ public class UserController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "login.do", method = RequestMethod.POST)
+    @RequestMapping(value = "login.do"/*, method = RequestMethod.POST*/)
     @ResponseBody
     public ServerResponse<User> login(String username, String password, HttpSession session, HttpServletResponse resp) {
         ServerResponse<User> response =  iUserService.login(username, password);
@@ -87,7 +87,7 @@ public class UserController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "get_user_info.do", method = RequestMethod.POST)
+    @RequestMapping(value = "get_user_info.do"/*, method = RequestMethod.POST*/)
     @ResponseBody
     public ServerResponse<User> getUserInfo(HttpServletRequest request) {
         String loginToken = CookieUtil.readLoginToken(request);
